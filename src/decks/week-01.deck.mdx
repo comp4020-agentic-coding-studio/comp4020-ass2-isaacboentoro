@@ -1,48 +1,73 @@
 ---
-title: Opening lecture
-description: The placeholder deck — replace it with a real deck for your course
----
-
-# Opening lecture
-
-{/* STARTER_CONTENT: replace this deck, then remove this comment. */}
-
-Replace this deck. It is here to show that slides are part of the site, built
-from the same markdown as everything else.
-
----
-
-## Slides are markdown
-
-A `---` starts a new slide. Everything else is ordinary markdown: headings,
-lists, links, tables, images, fenced code.
-
-- one idea per slide
-- the fewest words that carry it
-- the deck is a performance artefact, so it can say things a page wouldn't
-
+title: "Why C has none of this"
+description: Week 1 opening lecture deck
 ---
 
 {/* _class: impact */}
 
-# A slide class
+# Compile-Time Memory Safety in C
 
-`{/* _class: impact */}` fills the slide with the brand colour. `quote`,
-`banner` and `centered` are the others the theme styles.
+Twelve retrofits, one broken language
 
 ---
 
-## What else is here
+## C, 1972
+
+- no bounds checks
+- no lifetime tracking
+- no runtime, on purpose
+
+Fast, portable, and exactly as safe as the programmer writing it
+
+---
+
+## The bill comes due
+
+- buffer overflow
+- use-after-free
+- double-free
+- uninitialised read
+
+Five bug classes, forever, in every C codebase that has ever shipped
+
+---
+
+{/* _class: quote */}
+
+> "Trust the programmer" was a design decision made for 1970s hardware.
+> The hardware moved on. The decision didn't.
+
+---
+
+## This course is not "C is bad"
+
+It's: **what has anyone actually built** to keep C's speed and reach while
+closing this gap — and what did each attempt have to give up to do it?
+
+---
+
+## The shape of the semester
+
+- weeks 2–3: what compile-time checking can prove at all, and Rust as the
+  target everyone else is measured against
+- weeks 4–10: seven real retrofits, from Cyclone to academic prototypes
+- week 11: one CVE, every tool, side by side
+- week 12: what's actually shipping today
+
+---
+
+## Before next week
+
+Read up on Heartbleed (CVE-2014-0160) and Baron Samedit
+(CVE-2021-3156). Don't chase the exploit chain — just find the two or
+three lines doing the damage.
+
+---
+
+{/* _class: centered */}
+
+## See you in the studio
 
 ```sh
 pnpm dev
-pnpm check
 ```
-
-The second command proves the deck compiles with the rest of the site. Use the
-first to inspect every slide at the desktop and phone marking viewports; slide
-fit and legibility are visual judgements.
-
-The [astromotion](https://github.com/ANUcybernetics/astromotion) README has the
-rest of the syntax: speaker notes, backgrounds, QR codes, fragments, and
-components hydrated per slide.
