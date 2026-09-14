@@ -51,5 +51,5 @@ export const courseMeta = slopCourseMetaSchema.parse({
   description:
     "C has no memory safety and never will. Twelve weeks inside the retrofits " +
     "engineers built to bolt some on anyway, and what each one gives up to get it.",
-  tags: ["systems", "verification", "C"],
+  tags: ["systems", "verification", "safety"],
 }) satisfies CourseMetaInput;
