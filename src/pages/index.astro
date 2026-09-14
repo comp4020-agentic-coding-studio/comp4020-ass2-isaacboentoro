@@ -5,33 +5,37 @@ import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import heroImage from "../assets/images/hero-home.avif";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="A stack of pointer boxes and arrows in flat gold and black, one arrow crossing a broken boundary line, in a two-ink risograph print"
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Twelve weeks, one retrofit a week: Cyclone, Checked C, separation logic,
+    Frama-C, CompCert, MISRA-C and static analysis, and the academic
+    borrow-checking prototypes chasing Rust's guarantee inside plain C. You'll
+    annotate and verify real (small) C functions with at least three of these
+    tools across the semester, run a real CVE through several of them side by
+    side, and finish with a report that argues — on your own evidence, not on
+    vibes — which tool you'd actually ship with.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    You should already be comfortable reading and writing C, and unbothered by
+    a little formal notation — you don't need prior exposure to Hoare logic or
+    separation logic, but week 6 assumes you can follow a proof once it's
+    explained, not that you've never seen a `∀`. If "C has no memory safety" is
+    news to you, start with week 1's reading list before you enrol.
   </p>
 
   <h2>Where to go next</h2>
