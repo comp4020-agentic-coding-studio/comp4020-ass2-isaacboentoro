@@ -1,9 +1,5 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
 Written by you, for a reader: how you got from the brief to the harness and
 agentic workflow behind this submission. Markers read this file and follow its
 citations; they don't trawl the repo for evidence you didn't point at.
@@ -16,31 +12,63 @@ cover every deliverable.
 
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+A twelve-week course, "Compile-Time Memory Safety in C" (`SLOP4708`): a tour
+of the retrofits engineers have built to bolt spatial and temporal memory
+safety onto a language that was never designed to have either, with a
+throughline of "what did this specific tool give up to get it" running
+through every week. Two assessments — an annotate-a-real-function case
+study, and a comparative report where students pit two tools against each
+other and argue which one they'd ship — carry that same comparative method
+into what students actually do.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+I picked the topic by working through a few candidates conversationally
+before settling on this one — it's narrow enough that no real degree runs
+it standalone, which forced the twelve weeks to be a genuine argument
+(retrofit after retrofit, each trading something different) rather than a
+generic syllabus with the serial numbers filed off.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+Before writing any content I turned the assignment's mechanically-checkable
+spec lines into a real test against the platform's generated course API,
+grounded by actually running `pnpm build` and reading the resulting
+`dist/api/index.json` rather than guessing its shape:
+[`1720c9d`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/1720c9d).
+That test checks the allocated SLOP code digits, full week-1–12 coverage
+across lectures and sessions, assessment weights summing to 100, and at
+least one lecture linking a real (non-placeholder) deck — and it started
+red on three of those four, by design, since none of the content existed
+yet.
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+Content landed in the order the platform's collections needed it to build
+cleanly, each batch its own commit, `pnpm build` run after each one to
+catch dangling `related:`/`teachers:` refs immediately rather than at the
+end:
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
+- course identity —
+  [`5b3f06b`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/5b3f06b)
+- people (the two placeholder personas replaced with a convenor and tutor
+  whose backgrounds match the topic — formal methods and industrial static
+  analysis, respectively) —
+  [`6267bfd`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/6267bfd)
+- the full twelve-week curriculum, three studio sessions, and both
+  assessments rewritten with real specs and marking criteria —
+  [`eacf496`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/eacf496)
+- home page and policies —
+  [`5cd3222`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/5cd3222)
+- the week 1 deck (needed for the real-deck spec test to go green) —
+  [`18b1acc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/18b1acc)
+- new social-card and hero images, generated rather than sourced as
+  photography (a simple box-and-arrow pointer motif, one broken edge,
+  matching the course's own visual language) —
+  [`a724297`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/a724297)
+- this harness —
+  [`f2e8547`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-isaacboentoro/commit/f2e8547)
 
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
+By the end of that sequence all five tests in `spec/` (the shipped
+invariants plus `course-requirements.test.ts`) pass, `pnpm build` is clean
+with no dangling refs, no accessibility violations and no broken links, and
+no `STARTER_CONTENT` marker remains under `src/`.
 
 ## Before you ship
 
