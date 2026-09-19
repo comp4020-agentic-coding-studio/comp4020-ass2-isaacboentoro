@@ -19,7 +19,8 @@ spec:
   - submitted by the deadline, in the format named below
   - at least two distinct tools from the semester (e.g. Checked C and
     Frama-C, or Frama-C and MISRA-C/static analysis) are applied to the
-    same program
+    same program, at least one of which you did not use for the retrofit
+    case study
   - it states a recommendation — which tool you'd actually use for this
     program, in production — and defends it against the tradeoffs the
     semester covered
@@ -38,6 +39,11 @@ yourself. It is not a survey: don't summarise what each tool claims to do
 in general. Run both, on the same code, and report what actually happened —
 including the annotation cost, the false positives, the properties neither
 tool touched, and anything a tool caught that surprised you.
+
+Carrying your case-study tool over as one of the two is fine, and often
+sensible — you already know where it fights you. The other has to be one
+you haven't driven before, so that across the two assessments you've had
+your hands on at least three of the semester's tools rather than two.
 
 ## What you submit
 
